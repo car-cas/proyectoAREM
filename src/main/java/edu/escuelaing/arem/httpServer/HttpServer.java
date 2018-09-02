@@ -16,6 +16,12 @@ public class HttpServer {
      */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
+        Integer PORT;
+        try{
+            PORT = new Integer(System.getenv("PORT"));
+        }catch(Exception e){
+            PORT = 35000;
+        }
         try {
             serverSocket = new ServerSocket(35000);
         } catch (IOException e) {
