@@ -6,4 +6,4 @@ Nombre:
 
 Link de Heroku:
 
-* https://thawing-river-23861.herokuapp.com/index.html
+* https://thawing-river-23861.herokuapp.com/
