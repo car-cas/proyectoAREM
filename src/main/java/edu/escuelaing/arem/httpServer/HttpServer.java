@@ -5,29 +5,24 @@ import java.io.*;
 
 /**
  * @author Carlos Andrés Castaneda Lozano
- * 
+ *
  */
-
 public class HttpServer {
-    
+
     /**
      * @param args
-     * @throws IOException 
+     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         Integer PORT;
-        try{
-            PORT = new Integer(System.getenv("PORT"));
-        }catch(Exception e){
-            PORT = 35000;
-        }
         try {
-            serverSocket = new ServerSocket(PORT);
+            serverSocket = new ServerSocket(35000);
         } catch (IOException e) {
             System.err.println("Could not listen on port: 35000.");
             System.exit(1);
         }
+
         Socket clientSocket = null;
         while (true) {
             try {
