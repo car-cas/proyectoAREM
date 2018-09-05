@@ -11,10 +11,17 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Carlos Andrés Castaneda Lozano
+ * @author Carlos Andres Castaneda Lozano
  */
 public class Despliegue {
-
+    
+    /**
+     * Metodo proceso, Permite desplegar el servidor web con un cliente socket,
+     * ademas busca el archivo .html y el .png.
+     * @param clientSocket
+     * @throws IOException 
+     */
+    
     public void proceso(Socket clientSocket) throws IOException {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -47,7 +54,7 @@ public class Despliegue {
                     + "\r\n"
                     + resultado
                     + "\r\n\r\n";
- 
+            
             byte[] hByte = outputLine.getBytes();
             byte[] rta = new byte[bytes.length + hByte.length];
             for (int i = 0; i < hByte.length; i++) {
