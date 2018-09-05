@@ -15,7 +15,7 @@ public class HttpServer {
      */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
-        Integer PORT;
+       
         try {
             serverSocket = new ServerSocket(35000);
         } catch (IOException e) {

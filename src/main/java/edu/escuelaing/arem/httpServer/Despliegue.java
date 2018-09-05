@@ -23,11 +23,11 @@ public class Despliegue {
             byte[] bytes = null;
             if (inputLine != null) {
                 inputLine = inputLine.split(" ")[1];
-                if (inputLine.contains(".html")) {
+                if (inputLine.endsWith(".html")) {
                     bytes = Files.readAllBytes(new File("./" + inputLine).toPath());
                     resultado = "" + bytes.length;
                     formato = "text/html";
-                } else if (inputLine.contains(".png")) {
+                } else if (inputLine.endsWith(".png")) {
                     bytes = Files.readAllBytes(new File("./" + inputLine).toPath());
                     resultado = "" + bytes.length;
                     formato = "image/png";
