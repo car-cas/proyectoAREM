@@ -29,8 +29,8 @@ public class HttpServer {
                 System.err.println("Accept failed.");
                 System.exit(1);
             }
-            Despliegue despliegue = new Despliegue();
-            despliegue.proceso(clientSocket);
+            Despliegue despliegue = new Despliegue(clientSocket);
+            despliegue.start();
         }
 
     }
