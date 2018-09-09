@@ -11,14 +11,14 @@ public class HttpServer {
 
     /**
      * Metodo main, metodo principal de la clase HttpServer.
-     *
+     * 
      * @param args
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         Integer port;
-        try {
+        try { 
             port = new Integer(System.getenv("PORT"));
         } catch (Exception e) {
             port = 35000;
@@ -30,12 +30,18 @@ public class HttpServer {
             System.err.println("Could not listen on port: 35000.");
             System.exit(1);
         }
+        
 
         Socket clientSocket = null;
         while (true) {
-            System.out.println("Listo para recibir ...");
-            clientSocket = serverSocket.accept();
-            Despliegue despliegue = new Despliegue(clientSocket);
+            try {
+                System.out.println("Listo para recibir ...");
+                clientSocket = serverSocket.accept();
+            } catch (IOException e) {
+                System.err.println("Accept failed.");
+                System.exit(1);
+            }
+            Despliegue despliegue = new Despliegue();
             despliegue.proceso(clientSocket);
         }
 

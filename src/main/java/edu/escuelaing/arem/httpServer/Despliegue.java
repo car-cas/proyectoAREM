@@ -13,13 +13,7 @@ import java.util.logging.Logger;
  *
  * @author Carlos Andres Castaneda Lozano
  */
-public class Despliegue{
-    
-    private Socket clientSocket;
-
-    public Despliegue(Socket clientSocket) {
-        this.clientSocket = clientSocket;
-    }
+public class Despliegue {
     
     /**
      * Metodo proceso, Permite desplegar el servidor web con un cliente socket,
@@ -28,7 +22,7 @@ public class Despliegue{
      * @throws IOException 
      */
     
-    public void proceso(Socket clientSocket)  throws IOException {
+    public void proceso(Socket clientSocket) throws IOException {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String inputLine = in.readLine();
