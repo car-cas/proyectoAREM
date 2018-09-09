@@ -5,12 +5,17 @@ import java.io.*;
 
 /**
  * @author Carlos Andrés Castaneda Lozano
+ * 
+ * Clase HttpServer crea un servidor web capaz de responder peticiones
+ * html y .png
  *
  */
 public class HttpServer {
 
     /**
      * Metodo main, metodo principal de la clase HttpServer.
+     * Crea un servidor y un cliente Socket, y asigna un puerto
+     * para el servidor web.
      * 
      * @param args
      * @throws IOException
@@ -41,8 +46,8 @@ public class HttpServer {
                 System.err.println("Accept failed.");
                 System.exit(1);
             }
-            Despliegue despliegue = new Despliegue(clientSocket);
-            despliegue.start();
+            Multisolicitud multi = new Multisolicitud(clientSocket);
+            multi.start();
         }
 
     }

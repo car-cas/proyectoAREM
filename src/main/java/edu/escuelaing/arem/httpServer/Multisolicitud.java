@@ -12,18 +12,27 @@ import java.util.logging.Logger;
 /**
  *
  * @author Carlos Andres Castaneda Lozano
+ * 
+ * Clase Multisolicitud 
+ * 
  */
-public class Despliegue extends Thread{
+public class Multisolicitud extends Thread{
     private Socket clientSocket;
+    
     /**
-     * Metodo run, Permite desplegar el servidor web con un cliente socket,
-     * ademas busca el archivo .html y el .png.
-     * @param clientSocket
-     * @throws IOException 
+     * Constructor, crea el cliente Socket
+     * @param clientSocket 
      */
-     public Despliegue(Socket clientSocket) {
+    
+     public Multisolicitud(Socket clientSocket) {
         this.clientSocket = clientSocket;
-
+    
+        
+    /**
+     * Metodo Run, recibe las peticiones de cliente
+     * saca el recurso utilizado, puede ser un archivo .html o
+     * una imagen .png
+     */
     }
     @Override
     public void run(){
@@ -70,7 +79,7 @@ public class Despliegue extends Thread{
             clientSocket.getOutputStream().write(rta);
             clientSocket.close();
         } catch (IOException e) {
-            Logger.getLogger(Despliegue.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Multisolicitud.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 }
